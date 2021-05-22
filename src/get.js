@@ -12,15 +12,18 @@ module.exports.handler = async (event) => {
   };
 
   try {
-    const params = {
-      Bucket: BUCKET_NAME,
-      Key: decodeURIComponent(event.pathParameters.fileKey),
-    };
-    const data = await s3.getObject(params).promise();
+    // const params = {
+    //   Bucket: BUCKET_NAME,
+    //   Key: decodeURIComponent(event.pathParameters.fileKey),
+    // };
+    // const data = await s3.getObject(params).promise();
 
+    // response.body = JSON.stringify({
+    //   message: "Successfully retrieved file from S3.",
+    //   data,
+    // });
     response.body = JSON.stringify({
-      message: "Successfully retrieved file from S3.",
-      data,
+      message: "Successfully retrieved file from S3."
     });
   } catch (e) {
     console.error(e);
