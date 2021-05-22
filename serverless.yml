@@ -43,7 +43,7 @@ functions:
       - Effect: Allow
         Action:
           - "s3:Get*"
-        Resource: arn:aws:s3:::${self:custom.fileBucketName}/*
+        Resource: arn:aws:s3:::${self:custom.fileUploadBucketName}
   s3FileDelete:
     handler: src/delete.handler
     name: s3-file-delete
@@ -56,8 +56,8 @@ functions:
       - Effect: Allow
         Action:
           - "s3:DeleteObject"
-        Resource: arn:aws:s3:::${self:custom.fileBucketName}/*
-        
+        Resource: arn:aws:s3:::${self:custom.fileUploadBucketName}
+
 resources:
   Resources:
     FileBucket:
